@@ -1,0 +1,31 @@
+<div class="MainHeader">
+  <button (click)="clearData()" class="reload">
+    <span class="material-icons"> refresh </span>
+  </button>
+  <button (click)="LoadData()" class="download">
+    <span class="material-icons"> cloud_download </span>
+  </button>
+  <button (click)="postData()" class="upload">
+    <span class="material-icons"> cloud_upload </span>
+  </button>
+  <button *ngIf="IsFileReady" (click)="postData()" class="file_download">
+    <a [href]="downloadJsonHref" download="{{ filename }}.json"
+      ><span class="material-icons"> file_download </span></a
+    >
+  </button>
+</div>
+<div *ngIf="!dataProcessing">
+  <h3>When these conditions are met...</h3>
+  <div id="conditions"></div>
+
+  <h3>Do these actions...</h3>
+  <div id="actions"></div>
+
+  <button id="submit" type="button">Save Locally</button>
+</div>
+<div
+  id="snackbar"
+  [ngClass]="!showAlert ? '' : isError ? 'show red' : 'show green'"
+>
+  {{ alertMessage }}
+</div>

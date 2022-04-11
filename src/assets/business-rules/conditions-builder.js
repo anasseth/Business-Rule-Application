@@ -92,8 +92,9 @@
 
       var randomColor = Math.floor(Math.random() * 16777215).toString(16);
       var div = $("<div>", { class: "conditional " + kind }).css({
-        border: `4px solid #${randomColor}`,
+        border: `5px solid #${randomColor}`,
         margin: "20px",
+        paddingTop: "20px",
       });
       var selectWrapper = $("<div>", { class: "all-any-wrapper" });
       var select = $("<select>", { class: "all-any" });
@@ -149,8 +150,6 @@
 
       var rules = ruleData[kind];
       for (var i = 0; i < rules.length; i++) {
-        console.log(rules);
-
         div.append(this.buildRules(rules[i]));
       }
       return div;

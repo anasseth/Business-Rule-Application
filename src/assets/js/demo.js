@@ -83,9 +83,7 @@ var conditions, actions, nameField, ageField, occupationField, submit, allData;
   }
 
   function onReady() {
-    console.log("Waiting To Get Ready");
     setTimeout(() => {
-      console.log("Is Ready");
       conditions = $("#conditions");
       actions = $("#actions");
       nameField = $("#nameField");
